@@ -50,9 +50,15 @@ public class MainActivity extends AppCompatActivity implements IMyOnClick, Handl
         Producto p = productos.get(position);
         if(v.getId() == R.id.viewImagenMinus){
             Log.d("Menos", p.getNombre() + " Precio: "+ p.getPrecio() + " Stock: "+ p.getCantidad());
+            if(p.getCantidad() > 0){
+                p.menosCantidad();
+                adapter.notifyItemChanged(position);
+            }
         }
         if(v.getId() == R.id.viewImagenPlus){
             Log.d("Mas", p.getNombre() + " Precio: "+ p.getPrecio() + " Stock: "+ p.getCantidad());
+                p.masCantidad();
+                adapter.notifyItemChanged(position);
         }
     }
 }

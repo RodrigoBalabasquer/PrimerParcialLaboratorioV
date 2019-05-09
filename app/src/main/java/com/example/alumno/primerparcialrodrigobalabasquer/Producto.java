@@ -36,6 +36,13 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
+    public void masCantidad(){
+        this.cantidad = this.cantidad + 1;
+    }
+    public void menosCantidad(){
+        this.cantidad = this.cantidad - 1;
+    }
+
     public void setPrecio(String precio) {
         this.precio = precio;
     }
